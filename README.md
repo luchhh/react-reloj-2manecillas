@@ -18,4 +18,4 @@ Un ejercicio utilizando React para mostrar algunos conceptos básicos en React: 
 4. Acceder mediante la URL `http://localhost/react-reloj-base/`
 
 Para escuchar cambios y compilación automática ejecutar:
-- Desde el directorio react-reloj-base ejecutar `npx babel --watch src --out-dir js` para ejecutar el servidor
+- Desde el directorio react-reloj-base ejecutar `npx babel --watch src --out-dir js`

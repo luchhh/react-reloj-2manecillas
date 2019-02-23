@@ -18,39 +18,33 @@ class Reloj extends React.Component {
     }
 
     render() {
-        const segundos = this.state.date.getSeconds();
-        const minutos = this.state.date.getMinutes();
-        const horas = this.state.date.getHours();
+        //const segundos = this.state.date.getSeconds()
+        //const minutos = this.state.date.getMinutes()
+        //const horas = this.state.date.getHours()
 
         return React.createElement(
             "div",
             { className: "reloj container" },
             React.createElement(
                 "div",
-                { className: "titulo row" },
-                this.state.date.toTimeString()
+                { className: "row mb-2" },
+                React.createElement(
+                    "div",
+                    { className: "col-12 text-center" },
+                    this.props.titulo
+                )
             ),
             React.createElement(
                 "div",
-                { className: "row" },
+                { className: "row mb-2" },
                 React.createElement(
                     "div",
-                    { className: "col-4" },
-                    React.createElement(ManecillaDigitos, { digitos: horas })
-                ),
-                React.createElement(
-                    "div",
-                    { className: "col-4" },
-                    React.createElement(ManecillaDigitos, { digitos: minutos })
-                ),
-                React.createElement(
-                    "div",
-                    { className: "col-4" },
-                    React.createElement(ManecillaPorcentual, { porcentaje: segundos / 60 })
+                    { className: "col-12 text-center" },
+                    this.state.date.toTimeString()
                 )
             )
         );
     }
 }
 
-ReactDOM.render(React.createElement(Reloj, null), document.getElementById("reloj"));
+ReactDOM.render(React.createElement(Reloj, { titulo: "Mi Reloj" }), document.getElementById("reloj"));

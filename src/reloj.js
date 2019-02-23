@@ -21,19 +21,24 @@ class Reloj extends React.Component{
     }
 
     render(){
-        const segundos = this.state.date.getSeconds()
-        const minutos = this.state.date.getMinutes()
-        const horas = this.state.date.getHours()
+        //const segundos = this.state.date.getSeconds()
+        //const minutos = this.state.date.getMinutes()
+        //const horas = this.state.date.getHours()
 
         return (<div className="reloj container">
-                    <div className="titulo row">{this.state.date.toTimeString()}</div>
-                    <div className="row">
+                    <div className="row mb-2">
+                        <div className="col-12 text-center">{this.props.titulo}</div>
+                    </div>
+                    <div className="row mb-2">
+                        <div className="col-12 text-center">{this.state.date.toTimeString()}</div>
+                    </div>
+                    {/*<div className="row">
                         <div className="col-4"><ManecillaDigitos digitos={horas}></ManecillaDigitos></div>
                         <div className="col-4"><ManecillaDigitos digitos={minutos}></ManecillaDigitos></div>
                         <div className="col-4"><ManecillaPorcentual porcentaje={segundos/60}></ManecillaPorcentual></div>
-                    </div>
+                    </div>*/}
                 </div>)
     }
 }
 
-ReactDOM.render(<Reloj/>, document.getElementById("reloj"))
+ReactDOM.render(<Reloj titulo="Mi Reloj"/>, document.getElementById("reloj"))
